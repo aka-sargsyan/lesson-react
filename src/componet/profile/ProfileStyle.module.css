@@ -1,0 +1,5 @@
+.app_wraper_content {
+  grid-area: c;
+  background-color: rgb(174, 64, 252);
+  padding: 15px;
+}
