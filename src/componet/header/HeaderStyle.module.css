@@ -1,4 +1,5 @@
 .header{
   grid-area: h;
-  background-color: green;
+  background-color: #a6a39fb3;
+  padding: 5px;
 }
