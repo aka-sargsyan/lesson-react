@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/lesson-react/static/css/main.4845cde2.chunk.css",
-    "main.js": "/lesson-react/static/js/main.21e1351f.chunk.js",
-    "main.js.map": "/lesson-react/static/js/main.21e1351f.chunk.js.map",
+    "main.css": "/lesson-react/static/css/main.f882720f.chunk.css",
+    "main.js": "/lesson-react/static/js/main.a049f71a.chunk.js",
+    "main.js.map": "/lesson-react/static/js/main.a049f71a.chunk.js.map",
     "runtime-main.js": "/lesson-react/static/js/runtime-main.627b2b49.js",
     "runtime-main.js.map": "/lesson-react/static/js/runtime-main.627b2b49.js.map",
-    "static/js/2.e89860fb.chunk.js": "/lesson-react/static/js/2.e89860fb.chunk.js",
-    "static/js/2.e89860fb.chunk.js.map": "/lesson-react/static/js/2.e89860fb.chunk.js.map",
+    "static/js/2.2a3f4384.chunk.js": "/lesson-react/static/js/2.2a3f4384.chunk.js",
+    "static/js/2.2a3f4384.chunk.js.map": "/lesson-react/static/js/2.2a3f4384.chunk.js.map",
     "index.html": "/lesson-react/index.html",
-    "precache-manifest.1361a2c885a7ccfc0d6dbf5f51f398e3.js": "/lesson-react/precache-manifest.1361a2c885a7ccfc0d6dbf5f51f398e3.js",
+    "precache-manifest.96b47e1a98bfd0b4707076f2d4dea730.js": "/lesson-react/precache-manifest.96b47e1a98bfd0b4707076f2d4dea730.js",
     "service-worker.js": "/lesson-react/service-worker.js",
-    "static/css/main.4845cde2.chunk.css.map": "/lesson-react/static/css/main.4845cde2.chunk.css.map",
-    "static/js/2.e89860fb.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.e89860fb.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/lesson-react/static/media/logo.80c19cf7.png"
+    "static/css/main.f882720f.chunk.css.map": "/lesson-react/static/css/main.f882720f.chunk.css.map",
+    "static/js/2.2a3f4384.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.2a3f4384.chunk.js.LICENSE.txt",
+    "static/media/avatarka.jpg": "/lesson-react/static/media/avatarka.4db376fa.jpg",
+    "static/media/logo.png": "/lesson-react/static/media/logo.80c19cf7.png",
+    "static/media/profile.jpg": "/lesson-react/static/media/profile.01723588.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.627b2b49.js",
-    "static/js/2.e89860fb.chunk.js",
-    "static/css/main.4845cde2.chunk.css",
-    "static/js/main.21e1351f.chunk.js"
+    "static/js/2.2a3f4384.chunk.js",
+    "static/css/main.f882720f.chunk.css",
+    "static/js/main.a049f71a.chunk.js"
   ]
 }
