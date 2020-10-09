@@ -6,3 +6,16 @@
   grid-gap: 10px;
 }
 
+.app_wraper_content {
+  grid-area: c;
+  background-color: rgba(195, 196, 181, 0.49);
+  padding: 15px;
+}
+.p0{
+  padding: 0;
+}
+
+.m0{
+  margin: 0;
+}
+

@@ -1,5 +1,15 @@
-.app_wraper_content {
-  grid-area: c;
-  background-color: rgba(195, 196, 181, 0.49);
-  padding: 15px;
+.widthImg {
+  width: 100%;
+}
+
+.widthImg>img {
+  width: 100%;
+}
+
+.p16 {
+  padding: 16px 0;
+}
+
+.p16>img {
+  border-radius: 50%;
 }

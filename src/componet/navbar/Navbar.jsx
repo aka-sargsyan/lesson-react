@@ -16,8 +16,8 @@ const Navbar = () => {
     <div className={styleCss.Navbar}>
       <div>
         {navBarMenu.map((element) => (
-          <div key={element.id}>
-            <NavLink to={`/${element.to}`}>{element.name}</NavLink>
+          <div key={element.id} className={styleCss.textDecorationNone}>
+            <NavLink to={`/${element.to}`} activeClassName={styleCss.activeClass} className={styleCss.visitedClass}>{element.name}</NavLink>
           </div>
         ))}
       </div>

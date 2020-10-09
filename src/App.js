@@ -4,6 +4,7 @@ import './App.css';
 import Header from './componet/header/Header';
 import Navbar from './componet/navbar/Navbar';
 import Profile from './componet/profile/Profile';
+import Dialogs from './componet/dialogs/Dialogs';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <div className="app-wrapper">
           <Header />
           <Navbar />
-          <div>
+          <div className="app_wraper_content">
             <Route path='/profile' component={Profile} />
+            <Route path='/dialogs' component={Dialogs} />
           </div>
         </div>
       </div>
