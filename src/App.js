@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router,Route } from 'react-router-dom';
+import { BrowserRouter,Route } from 'react-router-dom';
 import './App.css';
 import Header from './componet/header/Header';
 import Navbar from './componet/navbar/Navbar';
@@ -8,7 +8,7 @@ import Dialogs from './componet/dialogs/Dialogs';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <div className="app-wrapper">
           <Header />
@@ -19,7 +19,7 @@ function App() {
           </div>
         </div>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

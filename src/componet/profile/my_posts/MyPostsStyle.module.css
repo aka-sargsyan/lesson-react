@@ -1,0 +1,7 @@
+.p16 {
+  padding: 16px 0;
+}
+
+.p16>img {
+  border-radius: 50%;
+}

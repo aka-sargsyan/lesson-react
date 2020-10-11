@@ -1,29 +1,41 @@
 import React from 'react';
 import styleCss from './DialogsStyle.module.css';
+import { NavLink } from 'react-router-dom';
 
-let dialogItems = [
-  { id: 1, item: "name1", messages: [{ id: 1, message: "hi friend" }, { id: 2, message: "I'm ok" }] },
-  { id: 2, item: "name2", messages: [{ id: 1, message: "hello" }, { id: 2, message: "I'm Good" }] },
-  { id: 3, item: "name3", messages: [{ id: 1, message: "hi friend, how are you?" }, { id: 2, message: "I'm ok" }] },
-  { id: 4, item: "name4", messages: [{ id: 1, message: "do you here me?" }, { id: 2, message: "Yes..." }] }
-]
+const DialogItem = (props) => {
+  let path = '/dialogs/' + props.id;
+  let name = props.name
+  return (
+    <div>
+      <NavLink to={path} className={`textDecorationNone`}>{name}</NavLink>
+    </div>
+  )
+}
 
+const Message = (props) => {
+  return (
+    <div>
+      <span>{props.message}</span>
+    </div>
+  )
+}
 const Dialogs = () => {
   return (
     <div className={styleCss.dialogs}>
-      <div className={styleCss.dialogItems}>
-        {dialogItems.map((element) =>
-          <div key={element.id}>
-            <span>{element.item}</span>
-          </div>)}
+      <div className={styleCss.dialogItem}>
+        <DialogItem id="1" name="name1" />
+        <DialogItem id="2" name="name2" />
+        <DialogItem id="3" name="name3" />
+        <DialogItem id="4" name="name4" />
+        <DialogItem id="5" name="name5" />
+        <DialogItem id="6" name="name6" />
       </div>
+
+
       <div className={styleCss.messages}>
-        <div>
-          {dialogItems[1].messages.map((element) =>
-            <div key={element.id}>
-              <span>{element.message}</span>
-            </div>)}
-        </div>
+        <Message message="hello"/>
+        <Message message="how are you"/>
+        <Message message="it is ok"/>
       </div>
     </div>
   )

@@ -1,0 +1,7 @@
+.widthImg {
+  width: 100%;
+}
+
+.widthImg>img {
+  width: 100%;
+}
