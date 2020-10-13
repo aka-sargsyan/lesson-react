@@ -2,8 +2,6 @@ import React from 'react';
 import styleCss from './ProfileInformationStyle.module.css';
 import profileImg from '../../assets/profile/profile.jpg';
 
-
-
 const ProfileInformation = () => {
   return (
     <div className={styleCss.profileInformation}>
