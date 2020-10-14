@@ -7,8 +7,8 @@ import Profile from './componet/profile/Profile';
 import Dialogs from './componet/dialogs/Dialogs';
 
 function App(props) {
-  let DialogsRender = () => <Dialogs dialogs={props.redux.dialogs} messages={props.redux.messages}/>;
-  let ProfileRender = () => <Profile posts={props.redux.posts}/>
+  let DialogsRender = () => <Dialogs state={props.state.dialogPage} />;
+  let ProfileRender = () => <Profile state={props.state.profilePage} />
 
   return (
     <BrowserRouter>
@@ -17,6 +17,7 @@ function App(props) {
           <Header />
           <Navbar />
           <div className="app_wraper_content">
+            <Route path='/' exact render={ProfileRender} />
             <Route path='/profile' render={ProfileRender} />
             <Route path='/dialogs' render={DialogsRender} />
           </div>

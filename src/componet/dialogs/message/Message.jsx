@@ -3,8 +3,8 @@ import styleCss from './MessageStyle.module.css';
 
 const Message = (props) => {
   return (
-    <div>
-      <span>{props.message}</span>
+    <div className={props.userId == 777 ? styleCss.textAlignRight : styleCss.textAlignLeft}>
+      <span >{props.message}</span>
     </div>
   )
 }
