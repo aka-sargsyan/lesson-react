@@ -1,25 +1,31 @@
 {
   "files": {
-    "main.css": "/lesson-react/static/css/main.1f49b8a0.chunk.css",
-    "main.js": "/lesson-react/static/js/main.511de48f.chunk.js",
-    "main.js.map": "/lesson-react/static/js/main.511de48f.chunk.js.map",
+    "main.css": "/lesson-react/static/css/main.165b6d7b.chunk.css",
+    "main.js": "/lesson-react/static/js/main.29f98f23.chunk.js",
+    "main.js.map": "/lesson-react/static/js/main.29f98f23.chunk.js.map",
     "runtime-main.js": "/lesson-react/static/js/runtime-main.627b2b49.js",
     "runtime-main.js.map": "/lesson-react/static/js/runtime-main.627b2b49.js.map",
-    "static/js/2.cd80514c.chunk.js": "/lesson-react/static/js/2.cd80514c.chunk.js",
-    "static/js/2.cd80514c.chunk.js.map": "/lesson-react/static/js/2.cd80514c.chunk.js.map",
+    "static/js/2.4bcb7367.chunk.js": "/lesson-react/static/js/2.4bcb7367.chunk.js",
+    "static/js/2.4bcb7367.chunk.js.map": "/lesson-react/static/js/2.4bcb7367.chunk.js.map",
     "index.html": "/lesson-react/index.html",
-    "precache-manifest.1d12beb4c2e9a52e4ba745de019e556c.js": "/lesson-react/precache-manifest.1d12beb4c2e9a52e4ba745de019e556c.js",
+    "precache-manifest.c5c2fa38fea3abd9636e5ca7cec734b3.js": "/lesson-react/precache-manifest.c5c2fa38fea3abd9636e5ca7cec734b3.js",
     "service-worker.js": "/lesson-react/service-worker.js",
-    "static/css/main.1f49b8a0.chunk.css.map": "/lesson-react/static/css/main.1f49b8a0.chunk.css.map",
-    "static/js/2.cd80514c.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.cd80514c.chunk.js.LICENSE.txt",
+    "static/css/main.165b6d7b.chunk.css.map": "/lesson-react/static/css/main.165b6d7b.chunk.css.map",
+    "static/js/2.4bcb7367.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.4bcb7367.chunk.js.LICENSE.txt",
     "static/media/avatarka.jpg": "/lesson-react/static/media/avatarka.4db376fa.jpg",
     "static/media/logo.png": "/lesson-react/static/media/logo.80c19cf7.png",
+    "static/media/name1.png": "/lesson-react/static/media/name1.6d5980cf.png",
+    "static/media/name2.png": "/lesson-react/static/media/name2.3be9eee2.png",
+    "static/media/name3.png": "/lesson-react/static/media/name3.28d0feff.png",
+    "static/media/name4.png": "/lesson-react/static/media/name4.4f701104.png",
+    "static/media/name5.png": "/lesson-react/static/media/name5.1d78c416.png",
+    "static/media/name6.png": "/lesson-react/static/media/name6.c1a07ddb.png",
     "static/media/profile.jpg": "/lesson-react/static/media/profile.01723588.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.627b2b49.js",
-    "static/js/2.cd80514c.chunk.js",
-    "static/css/main.1f49b8a0.chunk.css",
-    "static/js/main.511de48f.chunk.js"
+    "static/js/2.4bcb7367.chunk.js",
+    "static/css/main.165b6d7b.chunk.css",
+    "static/js/main.29f98f23.chunk.js"
   ]
 }
