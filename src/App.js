@@ -18,7 +18,7 @@ function App(props) {
           <Navbar />
           <div className="app_wraper_content">
             <Route path='/' exact render={ProfileRender} />
-            <Route path='/profile' render={ProfileRender} />
+            <Route path='/lesson-react/profile' render={ProfileRender} />
             <Route path='/dialogs' render={DialogsRender} />
           </div>
         </div>
