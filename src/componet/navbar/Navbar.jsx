@@ -3,7 +3,7 @@ import styleCss from './NavbarStyle.module.css'
 import { NavLink } from 'react-router-dom';
 
 const navBarMenu = [
-  { id: 1, to: 'lesson-react/profile', name: 'Profile' },
+  { id: 1, to: 'profile', name: 'Profile' },
   { id: 2, to: 'dialogs', name: 'Dialogs' },
   { id: 3, to: 'news', name: 'News' },
   { id: 4, to: 'music', name: 'Music' },

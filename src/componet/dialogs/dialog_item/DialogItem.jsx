@@ -6,7 +6,6 @@ const DialogItem = (props) => {
 
   let path = '/dialogs/' + props.id;
   let name = props.name;
-  console.log(props.avatarka);
 
   return (
     <div>

@@ -5,9 +5,12 @@ import name3 from '../assets/dialog/name3.png';
 import name4 from '../assets/dialog/name4.png';
 import name5 from '../assets/dialog/name5.png';
 import name6 from '../assets/dialog/name6.png';
+import { renderEntireTree } from '../../rerenderEntireTree';
+
 
 let state = {
   dialogPage: {
+    newMessageText: "ffff",
     dialogs: [
       { id: 1, name: "name1", avatarka: name1 },
       { id: 2, name: "name2", avatarka: name2 },
@@ -20,10 +23,11 @@ let state = {
       { id: 1, userId: 777, message: "hello" },
       { id: 2, userId: 445, message: "how are you" },
       { id: 3, userId: 777, message: "it is ok" },
-      { id: 3, userId: 445, message: "Good buy...." },
+      { id: 4, userId: 445, message: "Good buy...." },
     ],
   },
   profilePage: {
+    NewPostText:"Coins",
     posts: [
       { id: 1, avatarka: avatarka, post: "I'am ak and you", likeCount: 3 },
       { id: 2, avatarka: avatarka, post: "How are you", likeCount: 2 },
@@ -31,8 +35,34 @@ let state = {
       { id: 4, avatarka: avatarka, post: "I'm GOOD...", likeCount: 6 },
     ]
   },
+}
+
+export let addPost = (text) => {
+  let id = state.profilePage.posts.length + 1
+  state.profilePage.posts.push({ id: id, avatarka: avatarka, post: text, likeCount: 0 },);
+  state.profilePage.NewPostText = "";
+  renderEntireTree(state);
+}
+
+export let updateNewPostText = (text) => {
+  state.profilePage.NewPostText = text;
+  renderEntireTree(state);
+}
+
+export let updateNewMessageText = (text) => {
+  state.dialogPage.newMessageText = text;
+  renderEntireTree(state);
 
 }
+
+export let addMessage = (text) => {
+  let id = state.dialogPage.messages.length + 1
+  state.dialogPage.messages.push({ id: id, userId: 777, message: text },);
+  state.dialogPage.newMessageText = "";
+  renderEntireTree(state);
+}
+
+window.state = state;
 
 export default state;
 

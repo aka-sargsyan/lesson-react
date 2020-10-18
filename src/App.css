@@ -11,14 +11,19 @@
   background-color: rgba(195, 196, 181, 0.49);
   padding: 15px;
 }
-.p0{
+
+.p0 {
   padding: 0;
 }
 
-.m0{
+.pt10 {
+  padding-top: 10px;
+}
+
+.m0 {
   margin: 0;
 }
 
-.textDecorationNone{
+.textDecorationNone {
   text-decoration: none;
 }
