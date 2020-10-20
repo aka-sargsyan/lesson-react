@@ -7,8 +7,13 @@ import Profile from './componet/profile/Profile';
 import Dialogs from './componet/dialogs/Dialogs';
 
 function App(props) {
-  let DialogsRender = () => <Dialogs state={props.state.dialogPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText}/>;
-  let ProfileRender = () => <Profile state={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+
+  let DialogsRender = () => <Dialogs dialogPage={props.store.getState().dialogPage} 
+                                     addMessage={props.store.addMessage.bind(props.store)}
+                                     updateNewMessageText={props.store.updateNewMessageText.bind(props.store)}/>;
+  let ProfileRender = () => <Profile profilePage={props.store.getState().profilePage} 
+                                     addPost={props.store.addPost.bind(props.store)} 
+                                     updateNewPostText={props.store.updateNewPostText.bind(props.store)}/>
 
   return (
     <BrowserRouter>
