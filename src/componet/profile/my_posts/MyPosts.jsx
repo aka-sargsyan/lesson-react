@@ -1,4 +1,5 @@
 import React from 'react';
+import { addPostCreator, updateNewPostTextCreator } from '../../redux/state';
 import styleCss from './MyPostsStyle.module.css';
 import Post from './post/Post';
 
@@ -11,12 +12,12 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
+    props.dispatch(addPostCreator(text));
   }
 
   let onPostCheang = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.dispatch(updateNewPostTextCreator(text))
   }
 
   return (

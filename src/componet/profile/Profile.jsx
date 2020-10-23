@@ -9,7 +9,7 @@ const Profile = (props) => {
     <div className={styleCss.Profile}>
       <div className={styleCss.app_wraper_content}>
         <ProfileInformation />
-        <MyPosts posts={props.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+        <MyPosts posts={props.profilePage} dispatch={props.dispatch}/>
       </div>
     </div>
   )
