@@ -3,13 +3,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Header from './componet/header/Header';
 import Navbar from './componet/navbar/Navbar';
-import Profile from './componet/profile/Profile';
-import Dialogs from './componet/dialogs/Dialogs';
+import ProfileContainer from './componet/profile/ProfileContainer';
+import DialogsContainer from './componet/dialogs/DialogsContainer';
 
 function App(props) {
 
-  let DialogsRender = () => <Dialogs dialogPage={props.store.getState().dialogPage} dispatch={props.store.dispatch.bind(props.store)} />;
-  let ProfileRender = () => <Profile profilePage={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(props.store)} />
+  let DialogsRender = () => <DialogsContainer store={props.store} />;
+  let ProfileRender = () => <ProfileContainer store={props.store} />
 
   return (
     <BrowserRouter>

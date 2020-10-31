@@ -1,25 +1,24 @@
 import React from 'react';
-import { addMessageCreator, updateNewMessageTextCreator } from '../redux/state';
+import { addMessageCreator, updateNewMessageTextCreator } from '../redux/dialogs-reduser';
 import styleCss from './DialogsStyle.module.css';
 import DialogItem from './dialog_item/DialogItem';
 import Message from './message/Message';
 
 const Dialogs = (props) => {
-
-  let dialogs = props.dialogPage.dialogs
-  let messages = props.dialogPage.messages;
+  
+  let dialogs = props.dialogsPage.dialogs
+  let messages = props.dialogsPage.messages;
   let dialogsElement = dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} avatarka={dialog.avatarka} key={dialog.id} />);
   let messagesElement = messages.map(message => <Message id={message.id} message={message.message} userId={message.userId} key={message.id} />);
-  let text = props.dialogPage.newMessageText;
+  let text = props.dialogsPage.newMessageText;
 
   let sendMessage = () => {
-    props.dispatch(addMessageCreator(text))
+    props.onSendMessage(text)
   }
 
-  let onMessageCheang = (element) => {
+  let messageCheang = (element) => {
     let text = element.currentTarget.value;
-    props.dispatch(updateNewMessageTextCreator(text))
-
+    props.onMessageCheang(text)
   }
 
   return (
@@ -30,7 +29,7 @@ const Dialogs = (props) => {
       <div className={styleCss.messages}>
         {messagesElement}
         <div className="pt10">
-          <textarea  placeholder="enter youre message" onChange={onMessageCheang} value={text} cols="30" rows="1"></textarea>
+          <textarea  placeholder="enter youre message" onChange={messageCheang} value={text} cols="30" rows="1"></textarea>
           <button onClick={sendMessage}>send message</button>
         </div>
       </div>

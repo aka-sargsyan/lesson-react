@@ -1,7 +1,7 @@
 import React from 'react';
 import styleCss from './ProfileStyle.module.css';
 import ProfileInformation from './profileInformation/ProfileInformation';
-import MyPosts from './my_posts/MyPosts';
+import MyPostsContainer from './my_posts/MyPostsContainer';
 
 const Profile = (props) => {
 
@@ -9,7 +9,7 @@ const Profile = (props) => {
     <div className={styleCss.Profile}>
       <div className={styleCss.app_wraper_content}>
         <ProfileInformation />
-        <MyPosts posts={props.profilePage} dispatch={props.dispatch}/>
+        <MyPostsContainer profilePage={props.profilePage} dispatch={props.dispatch}/>
       </div>
     </div>
   )

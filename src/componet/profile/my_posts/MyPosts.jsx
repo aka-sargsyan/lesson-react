@@ -1,23 +1,22 @@
 import React from 'react';
-import { addPostCreator, updateNewPostTextCreator } from '../../redux/state';
 import styleCss from './MyPostsStyle.module.css';
 import Post from './post/Post';
 
 const MyPosts = (props) => {
 
-  let posts = props.posts.posts;
-  let text = props.posts.NewPostText;
+  let posts = props.profilePage.posts;
+  let text = props.profilePage.NewPostText;
   let postsElement = posts.map(post => <Post avatarka={post.avatarka} post={post.post} likeCount={post.likeCount} key={post.id} />);
   let newPostElement = React.createRef();
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    props.dispatch(addPostCreator(text));
+    props.onAddPost(text);
   }
 
   let onPostCheang = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextCreator(text))
+    props.onPostCheang(text)
   }
 
   return (
