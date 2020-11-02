@@ -27,12 +27,16 @@ let initialState = {
 }
 
 let updateNewMessageText = (state, text) => {
-  state.newMessageText = text;
+  return { ...state, newMessageText: text }
 }
+
 let addMessage = (state, text) => {
-  let id = state.messages.length + 1
-  state.messages.push({ id, userId: 777, message: text },);
-  state.newMessageText = "";
+  let stateCopy = { ...state };
+  stateCopy.messages = [...state.messages]
+  let id = stateCopy.messages.length + 1;
+  stateCopy.messages.push({ id, userId: 777, message: text });
+  stateCopy.newMessageText = "";
+  return stateCopy
 }
 
 export let updateNewMessageTextCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, text });
@@ -41,11 +45,11 @@ export let addMessageCreator = (text) => ({ type: ADD_MESSAGE, text });
 const dialogReduser = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_TEXT:
-      updateNewMessageText(state, action.text);
-      return state;
+      return updateNewMessageText(state, action.text);;
+
     case ADD_MESSAGE:
-      addMessage(state, action.text);
-      return state;
+      return addMessage(state, action.text);;
+
     default:
       return state;
   }
