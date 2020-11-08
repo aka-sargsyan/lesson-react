@@ -31,12 +31,14 @@ let updateNewMessageText = (state, text) => {
 }
 
 let addMessage = (state, text) => {
-  let stateCopy = { ...state };
-  stateCopy.messages = [...state.messages]
-  let id = stateCopy.messages.length + 1;
-  stateCopy.messages.push({ id, userId: 777, message: text });
-  stateCopy.newMessageText = "";
-  return stateCopy
+  if (text === "") {
+    return state;
+  } else {
+    let stateCopy = { ...state,newMessageText: "" };
+    let id = state.messages.length + 1;
+    stateCopy.messages = [...state.messages, { id, userId: 777, message: text }]
+    return stateCopy
+  }
 }
 
 export let updateNewMessageTextCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, text });
