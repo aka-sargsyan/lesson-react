@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a24ac9e21498e4ac4c58a7ccc1b7e903",
+    "revision": "6ed44c9d37876e31c339dffc816ef416",
     "url": "/lesson-react/index.html"
   },
   {
-    "revision": "08fcf49de98441d037d0",
-    "url": "/lesson-react/static/css/main.190a1a89.chunk.css"
+    "revision": "9a11111f8d915908d6b3",
+    "url": "/lesson-react/static/css/main.d875f26c.chunk.css"
   },
   {
-    "revision": "24b0ef2c02d0f78b3638",
-    "url": "/lesson-react/static/js/2.1c523136.chunk.js"
+    "revision": "c1ae07f0e9870fca37ea",
+    "url": "/lesson-react/static/js/2.e3e91b79.chunk.js"
   },
   {
     "revision": "b92b369c485a56d25a5a7495ecf46b59",
-    "url": "/lesson-react/static/js/2.1c523136.chunk.js.LICENSE.txt"
+    "url": "/lesson-react/static/js/2.e3e91b79.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "08fcf49de98441d037d0",
-    "url": "/lesson-react/static/js/main.9441114d.chunk.js"
+    "revision": "9a11111f8d915908d6b3",
+    "url": "/lesson-react/static/js/main.691172e8.chunk.js"
   },
   {
     "revision": "cd9ed1a9a2ec73a998a7",
@@ -58,5 +58,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "017235880b7be1ded79e55406fa55a28",
     "url": "/lesson-react/static/media/profile.01723588.jpg"
+  },
+  {
+    "revision": "7cc7a630624d20f7797cb4c8e93c09c1",
+    "url": "/lesson-react/static/media/user.7cc7a630.png"
   }
 ]);
