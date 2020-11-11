@@ -1,4 +1,6 @@
 import React from 'react';
+import userFoto from '../assets/users/user.png';
+import styleCss from './UsersStyle.module.css'
 
 const User = (props) => {
   let addDeleteUser = (element) => {
@@ -10,15 +12,24 @@ const User = (props) => {
     }
   }
   return (
-    <div>
-      <div>
-        <img src={props.user.photoUrl} alt="" width='40' />
-        <span>{props.user.fullName}</span>
+    <div className={styleCss.width}>
+      <div className={"displayFlex"}>
+        <div>
+          <img src={props.user.photos.smoll ? props.user.photos.smoll : userFoto} alt="" width='40' />
+        </div>
+        <div className={"ml10 displayFlex alinItemsCenter"}>
+          <span >{props.user.name}</span>
+        </div>
       </div>
-      <div>
-        <span>status   {props.user.status}</span>
+      <div className={"displayFlex justifyContentBetween"}>
+        <div className="">
+          <span>{props.user.status ? "status" : "don't have stahhhhhhhhhhh hhhhhhhhhhhhhhh hhhhhhhhhtus"}</span>
+          {props.user.status ? <span>{props.user.status}</span> : ""}
+        </div>
+        <div>
+          <button onClick={addDeleteUser}>{props.user.follow ? "Follow" : "Unfollow"}</button>
+        </div>
       </div>
-      <button onClick={addDeleteUser}>{props.user.follow ? "Follow" : "Unfollow"}</button>
     </div>
   )
 }

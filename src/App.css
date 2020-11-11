@@ -24,6 +24,22 @@
   margin: 0;
 }
 
+.ml10 {
+  margin-left: 10px;
+}
+
 .textDecorationNone {
   text-decoration: none;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.alinItemsCenter {
+  align-items: center;
+}
+
+.justifyContentBetween{
+  justify-content: space-between;
 }
