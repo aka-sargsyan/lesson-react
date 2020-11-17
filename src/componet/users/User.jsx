@@ -23,7 +23,7 @@ const User = (props) => {
       </div>
       <div className={"displayFlex justifyContentBetween"}>
         <div className="">
-          <span>{props.user.status ? "status" : "don't have stahhhhhhhhhhh hhhhhhhhhhhhhhh hhhhhhhhhtus"}</span>
+          <span>{props.user.status ? "status" : "don't have state"}</span>
           {props.user.status ? <span>{props.user.status}</span> : ""}
         </div>
         <div>
