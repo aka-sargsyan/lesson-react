@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/lesson-react/static/css/main.d875f26c.chunk.css",
-    "main.js": "/lesson-react/static/js/main.041b97cd.chunk.js",
-    "main.js.map": "/lesson-react/static/js/main.041b97cd.chunk.js.map",
+    "main.css": "/lesson-react/static/css/main.dccaa6f2.chunk.css",
+    "main.js": "/lesson-react/static/js/main.e8fd22d8.chunk.js",
+    "main.js.map": "/lesson-react/static/js/main.e8fd22d8.chunk.js.map",
     "runtime-main.js": "/lesson-react/static/js/runtime-main.627b2b49.js",
     "runtime-main.js.map": "/lesson-react/static/js/runtime-main.627b2b49.js.map",
-    "static/js/2.a0b9347b.chunk.js": "/lesson-react/static/js/2.a0b9347b.chunk.js",
-    "static/js/2.a0b9347b.chunk.js.map": "/lesson-react/static/js/2.a0b9347b.chunk.js.map",
+    "static/js/2.d91a53d3.chunk.js": "/lesson-react/static/js/2.d91a53d3.chunk.js",
+    "static/js/2.d91a53d3.chunk.js.map": "/lesson-react/static/js/2.d91a53d3.chunk.js.map",
     "index.html": "/lesson-react/index.html",
-    "precache-manifest.7e65826fbe404084a3d99c26de1fd8a4.js": "/lesson-react/precache-manifest.7e65826fbe404084a3d99c26de1fd8a4.js",
+    "precache-manifest.6d457714ee7e7d068badb9652c79bceb.js": "/lesson-react/precache-manifest.6d457714ee7e7d068badb9652c79bceb.js",
     "service-worker.js": "/lesson-react/service-worker.js",
-    "static/css/main.d875f26c.chunk.css.map": "/lesson-react/static/css/main.d875f26c.chunk.css.map",
-    "static/js/2.a0b9347b.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.a0b9347b.chunk.js.LICENSE.txt",
+    "static/css/main.dccaa6f2.chunk.css.map": "/lesson-react/static/css/main.dccaa6f2.chunk.css.map",
+    "static/js/2.d91a53d3.chunk.js.LICENSE.txt": "/lesson-react/static/js/2.d91a53d3.chunk.js.LICENSE.txt",
     "static/media/avatarka.jpg": "/lesson-react/static/media/avatarka.4db376fa.jpg",
+    "static/media/loader2.gif": "/lesson-react/static/media/loader2.7daab030.gif",
     "static/media/logo.png": "/lesson-react/static/media/logo.80c19cf7.png",
     "static/media/name1.png": "/lesson-react/static/media/name1.6d5980cf.png",
     "static/media/name2.png": "/lesson-react/static/media/name2.3be9eee2.png",
@@ -25,8 +26,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.627b2b49.js",
-    "static/js/2.a0b9347b.chunk.js",
-    "static/css/main.d875f26c.chunk.css",
-    "static/js/main.041b97cd.chunk.js"
+    "static/js/2.d91a53d3.chunk.js",
+    "static/css/main.dccaa6f2.chunk.css",
+    "static/js/main.e8fd22d8.chunk.js"
   ]
 }
