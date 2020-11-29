@@ -1,27 +1,33 @@
-import {connect} from 'react-redux';
-import { followSuccessCreator, setCurrentPageCreator, setUsersCreator, setUsersTotalCountCreator, unFollowSuccessCreator } from '../redux/users-reduser';
-import Users from './Users';
+import { connect } from 'react-redux';
+import { addFollow, deleteFollow, setUsers, setUsersTotalCount, setCurrentPage, setIsFetching } from '../redux/users-reduser';
+import UsersAPIComponent from './UsersAPIComponent';
 
 
 let mapStateToProps = (state) => {
   return ({
     usersPage: state.usersPage,
-    pageSize: state.pageSize,
-    totalCount: state.totalCount,
-    currentPage: state.currentPage
+    isFetching: state.usersPage.isFetching,
   })
-} 
-
-let dispatchStateToProps = (dispatch) => {
-  return {
-    addFollow: (userId) => dispatch(followSuccessCreator(userId)),
-    deleteFollow: (userId) => dispatch(unFollowSuccessCreator(userId)),
-    setUsers: (users) => dispatch(setUsersCreator(users)),
-    setUsersTotalCount: (totalUsers) => dispatch(setUsersTotalCountCreator(totalUsers)),
-    setCurrentPage: (current) => dispatch(setCurrentPageCreator(current)),
-  }
 }
 
-let UsersContainer = connect(mapStateToProps,dispatchStateToProps)(Users)
+// let dispatchStateToProps = (dispatch) => {
+//   return {
+//     addFollow: (userId) => dispatch(followSuccessCreator(userId)),
+//     deleteFollow: (userId) => dispatch(unFollowSuccessCreator(userId)),
+//     setUsers: (users) => dispatch(setUsersCreator(users)),
+//     setUsersTotalCount: (totalUsers) => dispatch(setUsersTotalCountCreator(totalUsers)),
+//     setCurrentPage: (current) => dispatch(setCurrentPageCreator(current)),
+//     setIsFetching: (boolean) => dispatch(setIsFetchingCreator(boolean)),
+//   }
+// }
+
+let dispatchObject = {
+  addFollow,
+  deleteFollow,
+  setUsers,
+  setIsFetching
+}
+
+let UsersContainer = connect(mapStateToProps, dispatchObject)(UsersAPIComponent)
 
 export default UsersContainer;

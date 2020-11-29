@@ -1,0 +1,37 @@
+.pagination ul {
+  display: flex;
+  list-style-type: none;
+  /* display: inline-block; */
+  padding: 0;
+  margin: 0;
+}
+
+.pagination ul li {
+  text-decoration: none;
+  /* display: inline; */
+}
+
+.pagination ul li button {
+  /* color: black; */
+  /* float: left; */
+  padding: 8px 16px;
+  transition: background-color .3s;
+  border: 1px solid rgb(77, 72, 72);
+  margin: 0 4px;
+ 
+}
+
+.pagination ul li button.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination ul li button.notActive:hover {
+  background-color: rgb(77, 72, 72);
+  cursor: pointer;
+}
+
+.notAllowed{
+  cursor: not-allowed;
+}
