@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addFollow, deleteFollow, setUsers, setUsersTotalCount, setCurrentPage, setIsFetching } from '../redux/users-reduser';
+import { addFollow, deleteFollow, setUsers, setIsFetching, setClickedButton } from '../redux/users-reduser';
 import UsersAPIComponent from './UsersAPIComponent';
 
 
@@ -7,6 +7,10 @@ let mapStateToProps = (state) => {
   return ({
     usersPage: state.usersPage,
     isFetching: state.usersPage.isFetching,
+    clickedButton: state.usersPage.clickedButton,
+    clickUserId: state.usersPage.clickUserId,
+    currentPage: state.usersPage.currentPage,
+    userCountPage: state.usersPage.userCountPage
   })
 }
 
@@ -25,7 +29,8 @@ let dispatchObject = {
   addFollow,
   deleteFollow,
   setUsers,
-  setIsFetching
+  setIsFetching,
+  setClickedButton
 }
 
 let UsersContainer = connect(mapStateToProps, dispatchObject)(UsersAPIComponent)

@@ -41,8 +41,8 @@ let addMessage = (state, text) => {
   }
 }
 
-export let updateNewMessageTextCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, text });
-export let addMessageCreator = (text) => ({ type: ADD_MESSAGE, text });
+export let onMessageCheang = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, text });
+export let onSendMessage = (text) => ({ type: ADD_MESSAGE, text });
 
 const dialogReduser = (state = initialState, action) => {
   switch (action.type) {

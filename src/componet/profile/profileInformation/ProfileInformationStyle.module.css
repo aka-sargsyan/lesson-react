@@ -5,3 +5,13 @@
 .widthImg>img {
   width: 100%;
 }
+
+.contacts {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.contacts td {
+  border: solid 1px;
+}

@@ -1,4 +1,4 @@
-import { addMessageCreator, updateNewMessageTextCreator } from '../redux/dialogs-reduser';
+import { onSendMessage, onMessageCheang } from '../redux/dialogs-reduser';
 import {connect} from 'react-redux'
 import Dialogs from './Dialogs';
 
@@ -27,14 +27,19 @@ let mapStatetoProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    onSendMessage: (text) => dispatch(addMessageCreator(text)),
-    onMessageCheang: (text) => dispatch(updateNewMessageTextCreator(text))
-  }
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     onSendMessage: (text) => dispatch(addMessageCreator(text)),
+//     onMessageCheang: (text) => dispatch(updateNewMessageTextCreator(text))
+//   }
+// }
+
+let dispatchObject = {
+  onSendMessage,
+  onMessageCheang
 }
 
-const DialogsContainer = connect(mapStatetoProps,mapDispatchToProps)(Dialogs);
+const DialogsContainer = connect(mapStatetoProps,dispatchObject)(Dialogs);
 
 export default DialogsContainer;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styleCss from './PaginationStyle.module.css';
-import * as axius from 'axios';
+import { usersAPI } from '../../../api/api';
 
 class Pagination extends React.Component {
   componentDidMount() {
@@ -11,11 +11,10 @@ class Pagination extends React.Component {
 
   setCurrentPage = (page) => {
     this.props.setIsFetching(false);
-    axius.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.userCountPage}`).
-          then(response => {
-        this.props.setIsFetching(true);
-        this.props.setUsers(response.data.items)
-      });
+    usersAPI.getUsers(page,this.props.userCountPage).then(response => {
+          this.props.setIsFetching(true);
+          this.props.setUsers(response.items)
+        });
   }
 
   clickPage = (event) => {

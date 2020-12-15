@@ -4,6 +4,7 @@ const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_USERS_TOTAL_COUNT = "SET_USERS_TOTAL_COUNT";
 const SET_IS_FETCHING = "SET_IS_FETCHING";
+const SET_CLICKED_BUTTON = "SET_CLICKED_BUTTON";
 
 // pagination action type start
 const START_PAGE = "START_PAGE";
@@ -15,13 +16,10 @@ const CURRENT_PAGE = "CURRENT_PAGE";
 
 let initialState = {
   users: [],
-  // pageSize: 20,
-  // totalCount: 0,
-  // currentPage: 1,
+  clickedButton: false,
+  clickUserId: null,
   isFetching: true,
 
-  nextPage: 1,
-  backPage: 1,
   followingInProgress: [],
 
   startPage: 0,
@@ -37,8 +35,8 @@ let initialState = {
 export let addFollow = (userId) => ({ type: FOLLOW, userId });
 export let deleteFollow = (userId) => ({ type: UNFOLLOW, userId });
 export let setUsers = (users) => ({ type: SET_USERS, users });
-// export let setCurrentPageCreator = (current) => ({ type: SET_CURRENT_PAGE, current });
 export let setIsFetching = (boolean) => ({ type: SET_IS_FETCHING, boolean });
+export let setClickedButton = (boolean, userId) => ({ type: SET_CLICKED_BUTTON, boolean, userId });
 
 // pagination action creator start
 export let setUsersTotalCount = (totalUsers) => ({ type: SET_USERS_TOTAL_COUNT, totalUsers });
@@ -72,7 +70,7 @@ const usersReduser = (state = initialState, action) => {
       return {
         ...state, users: state.users.map(user => {
           if (user.id === action.userId) {
-            user.follow = true;
+            user.followed = true;
             return user;
           } else {
             return user;
@@ -84,7 +82,7 @@ const usersReduser = (state = initialState, action) => {
       return {
         ...state, users: state.users.map(user => {
           if (user.id === action.userId) {
-            user.follow = false;
+            user.followed = false;
             return user;
           } else {
             return user;
@@ -100,6 +98,9 @@ const usersReduser = (state = initialState, action) => {
 
     case SET_IS_FETCHING:
       return { ...state, isFetching: action.boolean }
+
+    case SET_CLICKED_BUTTON:
+      return { ...state, clickedButton: action.boolean, clickUserId: action.userId }
 
     // start pagination
     case SET_USERS_TOTAL_COUNT:
