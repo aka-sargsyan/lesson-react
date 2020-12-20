@@ -1,6 +1,5 @@
 import React from 'react';
 import styleCss from './PaginationStyle.module.css';
-import { usersAPI } from '../../../api/api';
 
 class Pagination extends React.Component {
   componentDidMount() {
@@ -10,11 +9,7 @@ class Pagination extends React.Component {
   }
 
   setCurrentPage = (page) => {
-    this.props.setIsFetching(false);
-    usersAPI.getUsers(page,this.props.userCountPage).then(response => {
-          this.props.setIsFetching(true);
-          this.props.setUsers(response.items)
-        });
+    this.props.getUsersThunkCreator(page,this.props.userCountPage)
   }
 
   clickPage = (event) => {

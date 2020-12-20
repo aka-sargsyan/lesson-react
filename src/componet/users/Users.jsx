@@ -8,11 +8,11 @@ const Users = (props) => {
     <div>
       {props.isFetching === true ? null : <Preloader />}
       <div>
-        <PaginationContainer />
+        <PaginationContainer/>
       </div>
       {props.users.map(user => <User key={user.id} user={user} addFollow={props.addFollow} deleteFollow={props.deleteFollow}
                                      setClickedButton={props.setClickedButton} clickedButton={props.clickedButton}
-                                     clickUserId={props.clickUserId} />)}
+                                     clickUserId={props.clickUserId} followThunkCreator={props.followThunkCreator}/>)}
       <PaginationContainer />
     </div>
   )

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addFollow, deleteFollow, setUsers, setIsFetching, setClickedButton } from '../redux/users-reduser';
+import { setUsers, setIsFetching, setClickedButton,getUsersThunkCreator,followThunkCreator } from '../redux/users-reduser';
 import UsersAPIComponent from './UsersAPIComponent';
 
 
@@ -26,11 +26,13 @@ let mapStateToProps = (state) => {
 // }
 
 let dispatchObject = {
-  addFollow,
-  deleteFollow,
+  // addFollow,
+  // deleteFollow,
   setUsers,
   setIsFetching,
-  setClickedButton
+  setClickedButton,
+  getUsersThunkCreator,
+  followThunkCreator
 }
 
 let UsersContainer = connect(mapStateToProps, dispatchObject)(UsersAPIComponent)

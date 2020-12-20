@@ -1,5 +1,8 @@
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = "UNFOLLOW";
+import { usersAPI } from "../../api/api";
+
+// const FOLLOW = "FOLLOW";
+// const UNFOLLOW = "UNFOLLOW";
+const TOGGLEFOLLOW = "TOGGLEFOLLOW";
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_USERS_TOTAL_COUNT = "SET_USERS_TOTAL_COUNT";
@@ -32,8 +35,11 @@ let initialState = {
 
 }
 
-export let addFollow = (userId) => ({ type: FOLLOW, userId });
-export let deleteFollow = (userId) => ({ type: UNFOLLOW, userId });
+// export let addFollow = (userId) => ({ type: FOLLOW, userId });
+// export let deleteFollow = (userId) => ({ type: UNFOLLOW, userId });
+
+export let toggleFollow = (boolean, userId) => ({ type: TOGGLEFOLLOW, userId, boolean });
+
 export let setUsers = (users) => ({ type: SET_USERS, users });
 export let setIsFetching = (boolean) => ({ type: SET_IS_FETCHING, boolean });
 export let setClickedButton = (boolean, userId) => ({ type: SET_CLICKED_BUTTON, boolean, userId });
@@ -66,11 +72,35 @@ let addPages = (startPage, endPage) => {
 const usersReduser = (state = initialState, action) => {
   switch (action.type) {
 
-    case FOLLOW:
+    // case FOLLOW:
+    //   return {
+    //     ...state, users: state.users.map(user => {
+    //       if (user.id === action.userId) {
+    //         user.followed = true;
+    //         return user;
+    //       } else {
+    //         return user;
+    //       }
+    //     })
+    //   }
+
+    // case UNFOLLOW:
+    //   return {
+    //     ...state, users: state.users.map(user => {
+    //       if (user.id === action.userId) {
+    //         user.followed = false;
+    //         return user;
+    //       } else {
+    //         return user;
+    //       }
+    //     })
+    //   }
+
+    case TOGGLEFOLLOW:
       return {
         ...state, users: state.users.map(user => {
           if (user.id === action.userId) {
-            user.followed = true;
+            user.followed = action.boolean;
             return user;
           } else {
             return user;
@@ -78,17 +108,6 @@ const usersReduser = (state = initialState, action) => {
         })
       }
 
-    case UNFOLLOW:
-      return {
-        ...state, users: state.users.map(user => {
-          if (user.id === action.userId) {
-            user.followed = false;
-            return user;
-          } else {
-            return user;
-          }
-        })
-      }
     case SET_USERS:
       return { ...state, users: action.users }
 
@@ -123,6 +142,35 @@ const usersReduser = (state = initialState, action) => {
     // end pagination
 
     default: return state
+  }
+}
+
+export const getUsersThunkCreator = (currentPage, userCountPage) => {
+  return (dispatch) => {
+    dispatch(setIsFetching(false));
+    usersAPI.getUsers(currentPage, userCountPage).then(response => {
+      dispatch(setIsFetching(true));
+      dispatch(setUsers(response.items));
+    })
+  }
+}
+
+export const followThunkCreator = (followAction, userId) => {
+  return (dispatch) => {
+    dispatch(setClickedButton(true, userId));
+    let action = followAction === "Unfollow" ? usersAPI.follow(userId) : usersAPI.unfollow(userId);
+    // let action;
+    // if (followAction === "Unfollow"){
+    //   action = usersAPI.follow(userId)
+    // }else if(followAction === "Follow"){
+    //   action = usersAPI.unfollow(userId)
+    // }
+    action.then(response => {
+      if (response.resultCode === 0) {
+        dispatch(setClickedButton(false, null));
+        dispatch(toggleFollow(followAction === "Unfollow" ? true : false, userId));
+      }
+    });
   }
 }
 

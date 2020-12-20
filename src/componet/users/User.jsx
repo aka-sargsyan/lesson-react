@@ -2,32 +2,32 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import userFoto from '../assets/users/user.png';
 import styleCss from './UsersStyle.module.css'
-import { usersAPI } from '../../api/api';
+// import { usersAPI } from '../../api/api';
 const User = (props) => {
 
   let addDeleteUser = (element) => {
     let buttonName = element.currentTarget.innerText;
-    if (buttonName === "Follow") {
-      props.setClickedButton(true, props.user.id);
-      usersAPI.unfollow(props.user.id).then(response => {
-          if (response.resultCode == 0) {
-            props.setClickedButton(false, null);
-            props.deleteFollow(props.user.id);
+    // if (buttonName === "Follow") {
+      props.followThunkCreator(buttonName,props.user.id)
+      // props.setClickedButton(true, props.user.id);
+      // usersAPI.unfollow(props.user.id).then(response => {
+      //   if (response.resultCode === 0) {
+      //     props.setClickedButton(false, null);
+      //     props.deleteFollow(props.user.id);
+      //   }
+      // });
 
-          }
-        }
-        );
-    } else if (buttonName === "Unfollow") {
-      props.setClickedButton(true, props.user.id);
-        usersAPI.follow(props.user.id).then(response => {
-          if (response.resultCode == 0) {
-            props.setClickedButton(false, null);
-            props.addFollow(props.user.id);
+    // } else if (buttonName === "Unfollow") {
+    //   props.setClickedButton(true, props.user.id);
+    //   usersAPI.follow(props.user.id).then(response => {
+    //     if (response.resultCode === 0) {
+    //       props.setClickedButton(false, null);
+    //       props.addFollow(props.user.id);
 
-          }
-        }
-        );
-    }
+    //     }
+    //   }
+    //   );
+    // }
   }
 
 

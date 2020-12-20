@@ -8,8 +8,7 @@ const instance = axius.create({
 
 export const usersAPI = {
   getUsers(currentPage = 1, pageSize = 10) {
-    return instance.get(`users?page=${currentPage}&count=${pageSize}`,).
-      then(response => response.data);
+    return instance.get(`users?page=${currentPage}&count=${pageSize}`,).then(response => response.data);
   },
 
   follow(userId = null) {
@@ -30,15 +29,3 @@ export const authAPI = {
     return instance.get(`auth/me`).then(response => response)
   }
 }
-
-
-// axius.post(`https://social-network.samuraijs.com/api/1.0/follow/${props.user.id}`, {}, { withCredentials: true, headers: { 'API-KEY': "2e35f25e-594b-44da-bc65-97b49b0658fb" } }).
-// then(response => {
-//   if (response.data.resultCode == 0) {
-//     props.setClickedButton(false, null);
-//     props.addFollow(props.user.id);
-
-//   }
-// }
-// );
-// }

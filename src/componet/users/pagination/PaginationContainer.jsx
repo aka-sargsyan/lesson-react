@@ -1,6 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import {  setStartPage, setEndPage, setCountPage, setPages, setCurrentPage, setUsers, setIsFetching } from '../../redux/users-reduser';
+import {  setStartPage, setEndPage, setCountPage, setPages, setCurrentPage, setUsers, setIsFetching,getUsersThunkCreator } from '../../redux/users-reduser';
 import Pagination from './Pagination';
 
 let mapStateToProps = (state) => {
@@ -34,7 +33,8 @@ let dispatchObject = {
   setPages,
   setCurrentPage,
   setUsers,
-  setIsFetching
+  setIsFetching,
+  getUsersThunkCreator,
 }
 let PaginationContainer = connect(mapStateToProps, dispatchObject)(Pagination)
 
