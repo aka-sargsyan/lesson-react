@@ -1,7 +1,5 @@
 import React from 'react';
 import Users from './Users';
-import { usersAPI } from '../../api/api';
-// import { getUsersThunkCreator } from '../redux/users-reduser';
 
 class UsersAPIComponent extends React.Component {
 
@@ -18,7 +16,8 @@ class UsersAPIComponent extends React.Component {
     return <Users /*totalCount={this.props.totalCount}*/ users={this.props.usersPage.users}
       addFollow={this.props.addFollow} deleteFollow={this.props.deleteFollow}
       isFetching={this.props.isFetching} setClickedButton={this.props.setClickedButton}
-      clickedButton={this.props.clickedButton} clickUserId={this.props.clickUserId} followThunkCreator={this.props.followThunkCreator}/>
+      clickedButton={this.props.clickedButton} clickUserId={this.props.clickUserId} 
+      followThunkCreator={this.props.followThunkCreator} isAuthFetching={this.props.isAuthFetching}/>
   }
 }
 

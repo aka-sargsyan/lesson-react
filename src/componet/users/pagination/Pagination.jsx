@@ -3,9 +3,9 @@ import styleCss from './PaginationStyle.module.css';
 
 class Pagination extends React.Component {
   componentDidMount() {
-    this.props.setStartPage(1);
-    this.props.setEndPage(10);
-    this.props.setPages(1, 10);
+    // this.props.setStartPage(1);
+    // this.props.setEndPage(10);
+    this.props.setPages(this.props.startPage, this.props.endPage);
   }
 
   setCurrentPage = (page) => {

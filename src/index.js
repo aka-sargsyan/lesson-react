@@ -8,17 +8,27 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 // let rerenderEntireTree = () => {
+  // ReactDOM.render(
+  //   <React.StrictMode>
+  //     <BrowserRouter>
+  //       <Provider store={store}>
+  //         <App />
+  //       </Provider>
+  //     </BrowserRouter>
+  //   </React.StrictMode>,
+  //   document.getElementById('root')
+  // );
+
   ReactDOM.render(
-    <React.StrictMode>
       <BrowserRouter>
         <Provider store={store}>
           <App />
         </Provider>
-      </BrowserRouter>
-    </React.StrictMode>,
+      </BrowserRouter>,
     document.getElementById('root')
   );
-// }
+
+//  }
 
 // rerenderEntireTree();
 

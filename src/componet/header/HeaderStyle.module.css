@@ -3,3 +3,12 @@
   background-color: #a6a39fb3;
   padding: 5px;
 }
+
+.withImg{
+  width: 30px;
+  cursor: pointer;
+}
+
+.withImg>img{
+  width: 100%;
+}

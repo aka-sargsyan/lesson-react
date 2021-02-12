@@ -25,8 +25,8 @@ let initialState = {
 
   followingInProgress: [],
 
-  startPage: 0,
-  endPage: 0,
+  startPage: 1,
+  endPage: 10,
   countPage: 0,
   currentPage: 1,
   userCountPage: 10,
@@ -158,13 +158,7 @@ export const getUsersThunkCreator = (currentPage, userCountPage) => {
 export const followThunkCreator = (followAction, userId) => {
   return (dispatch) => {
     dispatch(setClickedButton(true, userId));
-    let action = followAction === "Unfollow" ? usersAPI.follow(userId) : usersAPI.unfollow(userId);
-    // let action;
-    // if (followAction === "Unfollow"){
-    //   action = usersAPI.follow(userId)
-    // }else if(followAction === "Follow"){
-    //   action = usersAPI.unfollow(userId)
-    // }
+    let action = (followAction === "Unfollow") ? usersAPI.follow(userId) : usersAPI.unfollow(userId);
     action.then(response => {
       if (response.resultCode === 0) {
         dispatch(setClickedButton(false, null));

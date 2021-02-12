@@ -12,7 +12,8 @@ const Users = (props) => {
       </div>
       {props.users.map(user => <User key={user.id} user={user} addFollow={props.addFollow} deleteFollow={props.deleteFollow}
                                      setClickedButton={props.setClickedButton} clickedButton={props.clickedButton}
-                                     clickUserId={props.clickUserId} followThunkCreator={props.followThunkCreator}/>)}
+                                     clickUserId={props.clickUserId} followThunkCreator={props.followThunkCreator}
+                                     isAuthFetching={props.isAuthFetching}/>)}
       <PaginationContainer />
     </div>
   )

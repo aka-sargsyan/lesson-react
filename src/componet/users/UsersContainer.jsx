@@ -1,16 +1,31 @@
 import { connect } from 'react-redux';
 import { setUsers, setIsFetching, setClickedButton,getUsersThunkCreator,followThunkCreator } from '../redux/users-reduser';
+import { getClickedButton, getClickUserId, getCurrentPage, getIsFetching, getUserCountPage, getUserisAuthFetching, getUsersPage } from '../redux/users-reselect';
 import UsersAPIComponent from './UsersAPIComponent';
 
 
+// let mapStateToProps = (state) => {
+//   return ({
+//     usersPage: state.usersPage,
+//     isFetching: state.usersPage.isFetching,
+//     clickedButton: state.usersPage.clickedButton,
+//     clickUserId: state.usersPage.clickUserId,
+//     currentPage: state.usersPage.currentPage,
+//     userCountPage: state.usersPage.userCountPage,
+//     isAuthFetching: state.auth.isAuthFetching
+//   })
+// }
+
+// with selectors 
 let mapStateToProps = (state) => {
   return ({
-    usersPage: state.usersPage,
-    isFetching: state.usersPage.isFetching,
-    clickedButton: state.usersPage.clickedButton,
-    clickUserId: state.usersPage.clickUserId,
-    currentPage: state.usersPage.currentPage,
-    userCountPage: state.usersPage.userCountPage
+    usersPage: getUsersPage(state),
+    isFetching: getIsFetching(state),
+    clickedButton: getClickedButton(state),
+    clickUserId: getClickUserId(state),
+    currentPage: getCurrentPage(state),
+    userCountPage: getUserCountPage(state),
+    isAuthFetching: getUserisAuthFetching(state)
   })
 }
 
@@ -26,8 +41,6 @@ let mapStateToProps = (state) => {
 // }
 
 let dispatchObject = {
-  // addFollow,
-  // deleteFollow,
   setUsers,
   setIsFetching,
   setClickedButton,

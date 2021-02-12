@@ -1,21 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-// import * as axius from 'axios';
-import { setUserProfile } from '../redux/profile-reduser';
-import { usersAPI } from '../../api/api';
+import { getProfileThunkCreator, getStatusThunkCreator, updateStatusThunkCreator } from '../redux/profile-reduser';
+import { withRouter } from 'react-router-dom';
+import { AuthRedirect } from '../../hoc/AuthRedirect';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
+
+
   componentDidMount() {
-    usersAPI.profileUserId().then(response => {
-      this.props.setUserProfile(response.data);
+    // console.log(this.props.userId);
+    let userId = this.props.match.params.userId;
+    if (!userId) {
+      userId = this.props.userId;
     }
-    );
+    this.props.getProfileThunkCreator(userId);
+    this.props.getStatusThunkCreator(userId);
   }
 
   render() {
     return (
-      <Profile {... this.props} />
+      <Profile {... this.props} statusText={this.props.statusText} />
     )
   }
 }
@@ -23,11 +29,20 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     user: state.profilePage.user,
+    userId: state.auth.userId,
+    isAuthFetching: state.auth.isAuthFetching,
+    statusText: state.profilePage.statusText,
   }
 }
 
 let dispatchObject = {
-  setUserProfile
+  getProfileThunkCreator,
+  getStatusThunkCreator,
+  updateStatusThunkCreator,
 }
 
-export default connect(mapStateToProps, dispatchObject)(ProfileContainer);
+export default compose(
+  withRouter,
+  AuthRedirect,
+  connect(mapStateToProps, dispatchObject)
+)(ProfileContainer)

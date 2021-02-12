@@ -1,6 +1,8 @@
 import { onSendMessage, onMessageCheang } from '../redux/dialogs-reduser';
 import {connect} from 'react-redux'
 import Dialogs from './Dialogs';
+import { AuthRedirect } from '../../hoc/AuthRedirect';
+import { compose } from 'redux';
 
 
 // const DialogsContainer = (props) => {
@@ -23,7 +25,8 @@ import Dialogs from './Dialogs';
 
 let mapStatetoProps = (state) => {
   return {
-    dialogsPage: state.dialogPage
+    dialogsPage: state.dialogPage,
+    isAuthFetching: state.auth.isAuthFetching,
   }
 }
 
@@ -39,7 +42,8 @@ let dispatchObject = {
   onMessageCheang
 }
 
-const DialogsContainer = connect(mapStatetoProps,dispatchObject)(Dialogs);
-
-export default DialogsContainer;
+export default compose(
+  AuthRedirect,
+  connect(mapStatetoProps,dispatchObject),
+)(Dialogs);
 
